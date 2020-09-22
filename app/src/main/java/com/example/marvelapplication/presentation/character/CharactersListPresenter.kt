@@ -1,4 +1,4 @@
-package com.example.marvelapplication.presentation
+package com.example.marvelapplication.presentation.character
 
 import com.example.marvelapplication.data.model.Characters
 import com.example.marvelapplication.data.repository.CharactersRepository
@@ -6,10 +6,10 @@ import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 
-class CharactersPresenter(
-    var view: CharactersContract.View?,
+class CharactersListPresenter(
+    var view: CharactersListContract.View?,
     var repository: CharactersRepository
-) : CharactersContract.Presenter {
+) : CharactersListContract.Presenter {
     private val compositeDisposable = CompositeDisposable()
 
     override fun getCharacters() {

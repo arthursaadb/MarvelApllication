@@ -1,8 +1,8 @@
-package com.example.marvelapplication.presentation
+package com.example.marvelapplication.presentation.character
 
 import com.example.marvelapplication.data.model.Result
 
-interface CharactersContract {
+interface CharactersListContract {
     interface View {
         fun showLoading()
         fun hideLoading()

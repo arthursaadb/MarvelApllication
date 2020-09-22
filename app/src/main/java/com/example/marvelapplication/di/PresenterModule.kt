@@ -1,13 +1,13 @@
 package com.example.marvelapplication.di
 
-import com.example.marvelapplication.presentation.CharactersContract
-import com.example.marvelapplication.presentation.CharactersPresenter
+import com.example.marvelapplication.presentation.character.CharactersListContract
+import com.example.marvelapplication.presentation.character.CharactersListPresenter
 import org.koin.dsl.module
 
 object PresenterModule {
     val instance = module {
-        factory<CharactersContract.Presenter> { (view: CharactersContract.View) ->
-            CharactersPresenter(
+        factory<CharactersListContract.Presenter> { (view: CharactersListContract.View) ->
+            CharactersListPresenter(
                 view,
                 get()
             )

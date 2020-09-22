@@ -2,8 +2,8 @@ package com.example.marvelapplication
 
 import com.example.marvelapplication.data.model.Characters
 import com.example.marvelapplication.data.repository.CharactersRepository
-import com.example.marvelapplication.presentation.CharactersContract
-import com.example.marvelapplication.presentation.CharactersPresenter
+import com.example.marvelapplication.presentation.character.CharactersListContract
+import com.example.marvelapplication.presentation.character.CharactersListPresenter
 import io.mockk.MockKAnnotations
 import io.mockk.clearAllMocks
 import io.mockk.every
@@ -20,7 +20,7 @@ class CharacterPresenterTest {
     val schedulers = RxImmediateSchedulerRule()
 
     @RelaxedMockK
-    lateinit var view: CharactersContract.View
+    lateinit var view: CharactersListContract.View
 
     @RelaxedMockK
     lateinit var repository: CharactersRepository
@@ -28,12 +28,16 @@ class CharacterPresenterTest {
     @RelaxedMockK
     lateinit var characters: Characters
 
-    lateinit var presenter: CharactersContract.Presenter
+    lateinit var presenter: CharactersListContract.Presenter
 
     @Before
     fun setup() {
         MockKAnnotations.init(this)
-        presenter = CharactersPresenter(view, repository)
+        presenter =
+            CharactersListPresenter(
+                view,
+                repository
+            )
     }
 
     @Test
