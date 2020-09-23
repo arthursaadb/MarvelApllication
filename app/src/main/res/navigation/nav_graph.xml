@@ -9,17 +9,30 @@
         android:id="@+id/character_list_dest"
         android:name="com.example.marvelapplication.presentation.character.CharacterListFragment"
         android:label="CharacterFragment">
-        <argument
-            android:name="character"
-            android:defaultValue="@null"
-            app:argType="com.example.marvelapplication.data.model.Result" />
         <action
-            android:id="@+id/action_character_list_dest_to_character_detail_dest"
+            android:id="@+id/nextAction"
             app:destination="@id/character_detail_dest" />
+        <action
+            android:id="@+id/action_character_list_dest_to_character_favorite_dest2"
+            app:destination="@id/character_favorite_dest" />
     </fragment>
+
     <fragment
         android:id="@+id/character_detail_dest"
         android:name="com.example.marvelapplication.presentation.details.CharacterDetailFragment"
-        android:label="fragment_character_detail"
-        tools:layout="@layout/fragment_character_detail" />
+        android:label="CharacterDetailFragment">
+        <argument
+            android:name="selectedCharacter"
+            android:defaultValue="@null"
+            app:argType="com.example.marvelapplication.data.model.Result"
+            app:nullable="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/character_favorite_dest"
+        android:name="com.example.marvelapplication.presentation.favorites.CharacterFavoriteFragment"
+        android:label="fragment_character_favorite"
+        tools:layout="@layout/fragment_character_favorite" />
+
 </navigation>

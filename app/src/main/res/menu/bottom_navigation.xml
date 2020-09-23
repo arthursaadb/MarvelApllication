@@ -2,8 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/home"
-        android:title="Home"
-        />
+        android:id="@+id/character_list_dest"
+        android:icon="@drawable/ic_home"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/character_favorite_dest"
+        android:icon="@drawable/ic_bookmark"
+        android:title="@string/favoritos" />
 
 </menu>
